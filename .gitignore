@@ -1,0 +1,21 @@
+*.class
+# Package Files #
+*.jar
+*.war
+*.ear
+*.iml
+*.ipr
+*.iws
+/bin
+.*
+!.gitignore
+/admin/classes
+/service/classes
+/api/classes
+/web/classes
+/app/classes
+/admin/target
+/service/target
+/api/target
+/web/target
+/app/target
