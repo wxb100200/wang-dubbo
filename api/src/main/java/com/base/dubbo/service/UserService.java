@@ -8,4 +8,5 @@ public interface UserService extends BaseService<BasUser>{
     Object pageHelper(Paginator p);
     Object log4j();
     Object loggerUtil();
+    Object register(String userName,String password);
 }

@@ -64,4 +64,10 @@ public class TestController {
         log2.error("---->>>>>>>>loggerUtil error:");
         return userService.loggerUtil();
     }
+    @ResponseBody
+    @RequestMapping("/register")
+    public Object register(String userName,String password){
+        return userService.register(userName,password);
+    }
+
 }

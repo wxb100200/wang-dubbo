@@ -6,6 +6,8 @@ import com.base.dubbo.mapper.BasUserMapper;
 import com.base.dubbo.model.BasUser;
 import com.base.dubbo.service.UserService;
 import com.base.dubbo.util.LoggerUtil;
+import com.base.dubbo.util.MD5Util;
+import com.base.dubbo.util.RandomUtil;
 import com.github.pagehelper.PageHelper;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,5 +49,14 @@ public class UserServiceImpl extends BaseServiceImpl<BasUser> implements UserSer
         log2.warn("---->>>>>>>>>loggerUtil warn:");
         log2.error("---->>>>>>>>loggerUtil error:");
         return PageReturn.success();
+    }
+
+    @Override
+    public Object register(String userName,String password) {
+        String salt = RandomUtil.generateRandomUuid();
+        String md5Password=MD5Util.MD5(salt+password);
+        log.info("--->>>salt:"+salt);
+        log.info("--->>>md5Password:"+md5Password);
+        return PageReturn.success(salt,md5Password);
     }
 }

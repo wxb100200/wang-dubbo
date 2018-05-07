@@ -25,6 +25,10 @@
 
         <spring.version>4.1.2.RELEASE</spring.version>
         <mybatis.version>3.3.0</mybatis.version>
+        <!-- 工具类 -->
+        <commons-lang3.version>3.3.2</commons-lang3.version>
+        <commons-lang.version>2.6</commons-lang.version>
+        <commons-codec.version>1.8</commons-codec.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -190,6 +194,22 @@
                 <groupId>com.github.sgroschupf</groupId>
                 <artifactId>zkclient</artifactId>
                 <version>0.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons-lang.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-codec.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
