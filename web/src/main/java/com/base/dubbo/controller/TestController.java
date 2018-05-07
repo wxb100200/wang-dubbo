@@ -6,6 +6,7 @@ import com.base.dubbo.common.PageReturn;
 import com.base.dubbo.common.Paginator;
 import com.base.dubbo.model.BasUser;
 import com.base.dubbo.service.UserService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/test")
 public class TestController {
+    private Logger log =Logger.getLogger(this.getClass());
     @Autowired
     UserService userService;
 
@@ -41,5 +43,14 @@ public class TestController {
     public Object pageHelper(Paginator p){
         Object obj= userService.pageHelper(p);
         return  obj;
+    }
+    @ResponseBody
+    @RequestMapping("/log4j")
+    public Object log4j(){
+        log.debug("---->>>>>>>>>log4j debug:");
+        log.info("---->>>>>>>>>log4j info:");
+        log.warn("---->>>>>>>>>log4j warn:");
+        log.error("---->>>>>>>>log4j error:");
+        return userService.log4j();
     }
 }
