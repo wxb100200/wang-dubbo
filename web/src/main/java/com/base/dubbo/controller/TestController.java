@@ -3,6 +3,7 @@ package com.base.dubbo.controller;
 
 import com.base.dubbo.common.MyException;
 import com.base.dubbo.common.PageReturn;
+import com.base.dubbo.common.Paginator;
 import com.base.dubbo.model.BasUser;
 import com.base.dubbo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +35,11 @@ public class TestController {
     public Object exception(){
         BasUser user = userService.selectByKey(1);
         throw new MyException("就是要抛异常");
+    }
+    @ResponseBody
+    @RequestMapping("/pageHelper")
+    public Object pageHelper(Paginator p){
+        Object obj= userService.pageHelper(p);
+        return  obj;
     }
 }
