@@ -5,6 +5,7 @@ import com.base.dubbo.common.Paginator;
 import com.base.dubbo.mapper.BasUserMapper;
 import com.base.dubbo.model.BasUser;
 import com.base.dubbo.service.UserService;
+import com.base.dubbo.util.LoggerUtil;
 import com.github.pagehelper.PageHelper;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 @Service("userService")
 public class UserServiceImpl extends BaseServiceImpl<BasUser> implements UserService {
     private Logger log =Logger.getLogger(this.getClass());
+    private LoggerUtil log2=LoggerUtil.getLogger(this.getClass());
     @Autowired
     BasUserMapper userMapper;
     @Override
@@ -35,6 +37,15 @@ public class UserServiceImpl extends BaseServiceImpl<BasUser> implements UserSer
         log.info("---->>>>>>>>>log4j info:");
         log.warn("---->>>>>>>>>log4j warn:");
         log.error("---->>>>>>>>log4j error:");
+        return PageReturn.success();
+    }
+
+    @Override
+    public Object loggerUtil() {
+        log2.debug("---->>>>>>>>>loggerUtil debug:");
+        log2.info("---->>>>>>>>>loggerUtil info:");
+        log2.warn("---->>>>>>>>>loggerUtil warn:");
+        log2.error("---->>>>>>>>loggerUtil error:");
         return PageReturn.success();
     }
 }

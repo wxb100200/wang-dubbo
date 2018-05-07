@@ -7,4 +7,5 @@ public interface UserService extends BaseService<BasUser>{
     BasUser findById(Integer id);
     Object pageHelper(Paginator p);
     Object log4j();
+    Object loggerUtil();
 }
