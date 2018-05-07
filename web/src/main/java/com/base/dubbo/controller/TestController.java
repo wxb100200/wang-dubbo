@@ -1,6 +1,8 @@
 package com.base.dubbo.controller;
 
 
+import com.base.dubbo.common.MyException;
+import com.base.dubbo.common.PageReturn;
 import com.base.dubbo.model.BasUser;
 import com.base.dubbo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +22,17 @@ public class TestController {
         BasUser user = userService.findById(1);
         return user;
     }
+    @ResponseBody
+    @RequestMapping("/findById2")
+    public Object findById2(){
+        BasUser user = userService.findById(1);
+        return PageReturn.successData(user);
+    }
 
     @ResponseBody
-    @RequestMapping("/findUser")
-    public Object findUser(){
+    @RequestMapping("/exception")
+    public Object exception(){
         BasUser user = userService.selectByKey(1);
-        return user;
+        throw new MyException("就是要抛异常");
     }
 }
