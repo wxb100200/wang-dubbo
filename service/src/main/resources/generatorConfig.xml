@@ -12,22 +12,26 @@
             <property name="caseSensitive" value="false"/>
         </plugin>
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/wang?characterEncoding=utf-8"
+                        connectionURL="jdbc:mysql://localhost:3306/wang-ssm?characterEncoding=utf-8"
                         userId="root"
                         password="">
         </jdbcConnection>
 
         <javaModelGenerator targetPackage="com.base.dubbo.model"
-                                targetProject="D:\\tmp\\wang-dubbo\\api\\src\\main\\java"/>
+                                targetProject="D:\\project\\wang-dubbo\\api\\src\\main\\java"/>
 
         <sqlMapGenerator targetPackage="mapper"
-                         targetProject="D:\\tmp\\wang-dubbo\\service\\src\\main\\resources"/>
+                         targetProject="D:\\project\\wang-dubbo\\service\\src\\main\\resources"/>
 
         <javaClientGenerator targetPackage="com.base.dubbo.mapper"
-                             targetProject="D:\\tmp\\wang-dubbo\\service\\src\\main\\java" type="XMLMAPPER" />
+                             targetProject="D:\\project\\wang-dubbo\\service\\src\\main\\java" type="XMLMAPPER" />
 
-        <!--<table tableName="user" domainObjectName="User"></table>-->
-        <table tableName="bas_user" domainObjectName="BasUser"></table>
+        <!--<table tableName="bas_user" domainObjectName="BasUser"></table>-->
+        <table tableName="bas_account" domainObjectName="BasAccount"></table>
+        <table tableName="bas_config" domainObjectName="BasConfig"></table>
+        <table tableName="bas_config_param" domainObjectName="BasConfigParam"></table>
+        <table tableName="bas_login" domainObjectName="BasLogin"></table>
+        <table tableName="bas_user_info" domainObjectName="BasUserInfo"></table>
 
       </context>
   </generatorConfiguration>
