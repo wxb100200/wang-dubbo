@@ -2,6 +2,7 @@ package com.base.dubbo.service.impl;
 
 import com.base.dubbo.common.PageReturn;
 import com.base.dubbo.common.Paginator;
+import com.base.dubbo.constant.Global;
 import com.base.dubbo.mapper.BasTestMapper;
 import com.base.dubbo.model.BasTest;
 import com.base.dubbo.service.TestService;
@@ -57,5 +58,10 @@ public class TestServiceImpl extends BaseServiceImpl<BasTest> implements TestSer
         log.info("--->>>salt:"+salt);
         log.info("--->>>md5Password:"+md5Password);
         return PageReturn.success(salt,md5Password);
+    }
+
+    @Override
+    public Object constant() {
+        return PageReturn.success(Global.CONFIG.get("login_fail_number")+",啦啦啦");
     }
 }

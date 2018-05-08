@@ -9,4 +9,5 @@ public interface TestService extends BaseService<BasTest>{
     Object log4j();
     Object loggerUtil();
     Object register(String userName, String password);
+    Object constant();
 }

@@ -27,6 +27,9 @@
         <description>spring listener</description>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+    <listener>
+        <listener-class>com.base.dubbo.web.ConstantsServletContextListener</listener-class>
+    </listener>
 
 
     <welcome-file-list>

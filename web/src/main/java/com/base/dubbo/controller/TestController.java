@@ -70,4 +70,10 @@ public class TestController {
         return testService.register(userName,password);
     }
 
+    @ResponseBody
+    @RequestMapping("/constant")
+    public Object constant(){
+        return testService.constant();
+    }
+
 }
