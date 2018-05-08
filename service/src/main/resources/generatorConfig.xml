@@ -26,12 +26,15 @@
         <javaClientGenerator targetPackage="com.base.dubbo.mapper"
                              targetProject="D:\\project\\wang-dubbo\\service\\src\\main\\java" type="XMLMAPPER" />
 
-        <!--<table tableName="bas_user" domainObjectName="BasUser"></table>-->
+        <!--<table tableName="bas_test" domainObjectName="BasTest"></table>-->
+
         <table tableName="bas_account" domainObjectName="BasAccount"></table>
         <table tableName="bas_config" domainObjectName="BasConfig"></table>
         <table tableName="bas_config_param" domainObjectName="BasConfigParam"></table>
         <table tableName="bas_login" domainObjectName="BasLogin"></table>
-        <table tableName="bas_user_info" domainObjectName="BasUserInfo"></table>
+        <table tableName="bas_user" domainObjectName="BasUser"></table>
+
+
 
       </context>
   </generatorConfiguration>

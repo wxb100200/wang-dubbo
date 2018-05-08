@@ -2,9 +2,9 @@ package com.base.dubbo.service.impl;
 
 import com.base.dubbo.common.PageReturn;
 import com.base.dubbo.common.Paginator;
-import com.base.dubbo.mapper.BasUserMapper;
-import com.base.dubbo.model.BasUser;
-import com.base.dubbo.service.UserService;
+import com.base.dubbo.mapper.BasTestMapper;
+import com.base.dubbo.model.BasTest;
+import com.base.dubbo.service.TestService;
 import com.base.dubbo.util.LoggerUtil;
 import com.base.dubbo.util.MD5Util;
 import com.base.dubbo.util.RandomUtil;
@@ -14,22 +14,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-
-@Service("userService")
-public class UserServiceImpl extends BaseServiceImpl<BasUser> implements UserService {
+@Service("testService")
+public class TestServiceImpl extends BaseServiceImpl<BasTest> implements TestService {
     private Logger log =Logger.getLogger(this.getClass());
     private LoggerUtil log2=LoggerUtil.getLogger(this.getClass());
     @Autowired
-    BasUserMapper userMapper;
+    BasTestMapper testMapper;
     @Override
-    public BasUser findById(Integer id) {
-        return userMapper.findById(id);
+    public BasTest findById(Integer id) {
+        return testMapper.findById(id);
     }
 
     @Override
     public Object pageHelper(Paginator p) {
         PageHelper.startPage(p.getPageNum(), p.getPageSize());
-        PageReturn data=PageReturn.list(userMapper.selectAll());
+        PageReturn data=PageReturn.list(testMapper.selectAll());
         return data;
     }
 

@@ -4,8 +4,8 @@ package com.base.dubbo.controller;
 import com.base.dubbo.common.MyException;
 import com.base.dubbo.common.PageReturn;
 import com.base.dubbo.common.Paginator;
-import com.base.dubbo.model.BasUser;
-import com.base.dubbo.service.UserService;
+import com.base.dubbo.model.BasTest;
+import com.base.dubbo.service.TestService;
 import com.base.dubbo.util.LoggerUtil;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,31 +19,31 @@ public class TestController {
     private Logger log =Logger.getLogger(this.getClass());
     private LoggerUtil log2=LoggerUtil.getLogger(this.getClass());
     @Autowired
-    UserService userService;
+    TestService testService;
 
     @ResponseBody
     @RequestMapping("/findById")
     public Object findById(){
-        BasUser user = userService.findById(1);
-        return user;
+        BasTest test = testService.findById(1);
+        return test;
     }
     @ResponseBody
     @RequestMapping("/findById2")
     public Object findById2(){
-        BasUser user = userService.findById(1);
-        return PageReturn.successData(user);
+        BasTest test = testService.findById(1);
+        return PageReturn.successData(test);
     }
 
     @ResponseBody
     @RequestMapping("/exception")
     public Object exception(){
-        BasUser user = userService.selectByKey(1);
+        BasTest test = testService.selectByKey(1);
         throw new MyException("就是要抛异常");
     }
     @ResponseBody
     @RequestMapping("/pageHelper")
     public Object pageHelper(Paginator p){
-        Object obj= userService.pageHelper(p);
+        Object obj= testService.pageHelper(p);
         return  obj;
     }
     @ResponseBody
@@ -53,7 +53,7 @@ public class TestController {
         log.info("---->>>>>>>>>log4j info:");
         log.warn("---->>>>>>>>>log4j warn:");
         log.error("---->>>>>>>>log4j error:");
-        return userService.log4j();
+        return testService.log4j();
     }
     @ResponseBody
     @RequestMapping("/loggerUtil")
@@ -62,12 +62,12 @@ public class TestController {
         log2.info("---->>>>>>>>>loggerUtil info:");
         log2.warn("---->>>>>>>>>loggerUtil warn:");
         log2.error("---->>>>>>>>loggerUtil error:");
-        return userService.loggerUtil();
+        return testService.loggerUtil();
     }
     @ResponseBody
     @RequestMapping("/register")
     public Object register(String userName,String password){
-        return userService.register(userName,password);
+        return testService.register(userName,password);
     }
 
 }

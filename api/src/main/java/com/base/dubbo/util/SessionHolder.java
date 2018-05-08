@@ -1,6 +1,6 @@
 package com.base.dubbo.util;
 
-import com.base.dubbo.model.BasUser;
+import com.base.dubbo.model.BasUserVo;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -16,8 +16,8 @@ public class SessionHolder {
     final static String PERSON_ID = "PID";  //用户ID的cookie key
     final static String ORIGINAL_PERSON_ID = "OPID"; // 如果是模拟用户，本key指定了模拟前原来的用户，被模拟的用户存在PID中。
 
-    private static ThreadLocal<BasUser> user = new ThreadLocal<BasUser>();
-    private static ThreadLocal<BasUser> originalBasUser = new ThreadLocal<BasUser>();
+    private static ThreadLocal<BasUserVo> user = new ThreadLocal<BasUserVo>();
+    private static ThreadLocal<BasUserVo> originalBasUser = new ThreadLocal<BasUserVo>();
     private static ThreadLocal<Map<String,String>> cookieMap=new ThreadLocal<Map<String, String>>();
 
     private SessionHolder(){}
@@ -40,7 +40,7 @@ public class SessionHolder {
         return map;
     }
 
-    public static void setCurrentBasUser(BasUser p){
+    public static void setCurrentBasUser(BasUserVo p){
         user.set(p);
         Map<String,String> map=getOrCreateCookieMap();
         if(p==null){
