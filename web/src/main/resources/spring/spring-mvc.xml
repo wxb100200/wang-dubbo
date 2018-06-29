@@ -8,6 +8,10 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
    
 	<context:component-scan base-package="com.base.dubbo.controller" />
 
+	<!-- 取消对静态资源的解释 -->
+	<!-- 这样就不会出现找不到匹配资源的情况 -->
+	<mvc:default-servlet-handler />
+
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<!-- 对所有的请求拦截使用/** ,对某个模块下的请求拦截使用：/myPath/* -->
@@ -37,9 +41,6 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 	</bean>
 
 
-
-
-
 	<bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
 		<property name="supportedMediaTypes">
 			<list>
@@ -55,11 +56,8 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 			</list>
 		</property>
 	</bean>
-    <mvc:annotation-driven /> 
-    <mvc:resources location="/static/" mapping="/static/**"/> 
-	
-	   <!-- 静态资源映射 -->
-	<mvc:resources mapping="/static/**" location="/static/" />
+    <mvc:annotation-driven />
+
 
 	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 		<property name="exceptionMappings">
