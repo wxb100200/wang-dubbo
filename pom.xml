@@ -211,6 +211,12 @@
                 <artifactId>commons-codec</artifactId>
                 <version>${commons-codec.version}</version>
             </dependency>
+            <!--解析令牌的包-->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>0.6.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
