@@ -33,6 +33,12 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 	</mvc:interceptors>
 	<bean name="exceptionInterceptor" class="com.base.dubbo.common.ExceptionInterceptor" />
 
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="utf-8"></property>
+		<property name="maxUploadSize" value="10485760000"></property>
+		<property name="maxInMemorySize" value="40960"></property>
+	</bean>
+
 	<!-- 3.配置jsp 显示ViewResolver -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />

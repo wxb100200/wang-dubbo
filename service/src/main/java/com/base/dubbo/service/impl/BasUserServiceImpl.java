@@ -25,7 +25,7 @@ public class BasUserServiceImpl extends BaseServiceImpl<BasUser> implements BasU
         //判断该用户是否已经存在
         BasAccount account=accountMapper.findByUserName(userName);
         if(account!=null){
-            return PageReturn.success("该用户已经被注册");
+            return PageReturn.fail("该用户已经被注册");
         }
         //新增账号
         String salt= RandomUtil.generateRandomChar(4);//获得随机盐
