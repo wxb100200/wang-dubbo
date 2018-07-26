@@ -8,17 +8,17 @@ public class BasConfigParam {
     private Integer id;
 
     /**
-     * 配置名称
+     * 名称
      */
     private String name;
 
     /**
-     * 配置编码
+     * 编码
      */
     private String code;
 
     /**
-     * 配置值
+     * 值
      */
     private String value;
 
@@ -42,54 +42,54 @@ public class BasConfigParam {
     }
 
     /**
-     * 获取配置名称
+     * 获取名称
      *
-     * @return name - 配置名称
+     * @return name - 名称
      */
     public String getName() {
         return name;
     }
 
     /**
-     * 设置配置名称
+     * 设置名称
      *
-     * @param name 配置名称
+     * @param name 名称
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * 获取配置编码
+     * 获取编码
      *
-     * @return code - 配置编码
+     * @return code - 编码
      */
     public String getCode() {
         return code;
     }
 
     /**
-     * 设置配置编码
+     * 设置编码
      *
-     * @param code 配置编码
+     * @param code 编码
      */
     public void setCode(String code) {
         this.code = code;
     }
 
     /**
-     * 获取配置值
+     * 获取值
      *
-     * @return value - 配置值
+     * @return value - 值
      */
     public String getValue() {
         return value;
     }
 
     /**
-     * 设置配置值
+     * 设置值
      *
-     * @param value 配置值
+     * @param value 值
      */
     public void setValue(String value) {
         this.value = value;

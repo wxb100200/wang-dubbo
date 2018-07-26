@@ -17,8 +17,4 @@
     -->
     id, name, code, value, remark
   </sql>
-  <!--查询所有数据-->
-  <select id="findList" resultType="com.base.dubbo.model.BasConfigParam">
-    SELECT <include refid="Base_Column_List"/> from bas_config_param
-  </select>
 </mapper>

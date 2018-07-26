@@ -48,7 +48,7 @@ public class BasUser {
     /**
      * 婚姻
      */
-    private Boolean marriage;
+    private String marriage;
 
     /**
      * 地址
@@ -205,7 +205,7 @@ public class BasUser {
      *
      * @return marriage - 婚姻
      */
-    public Boolean getMarriage() {
+    public String getMarriage() {
         return marriage;
     }
 
@@ -214,7 +214,7 @@ public class BasUser {
      *
      * @param marriage 婚姻
      */
-    public void setMarriage(Boolean marriage) {
+    public void setMarriage(String marriage) {
         this.marriage = marriage;
     }
 

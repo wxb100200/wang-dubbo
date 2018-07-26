@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 @Service("configParamService")
 public class ConfigParamService {
     @Autowired
@@ -15,6 +16,6 @@ public class ConfigParamService {
      * 查询所有数据
      */
     public List<BasConfigParam> findList(){
-        return configParamMapper.findList();
+        return configParamMapper.selectAll();
     }
 }

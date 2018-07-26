@@ -12,6 +12,7 @@ import com.base.dubbo.util.RandomUtil;
 import com.github.pagehelper.PageHelper;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 
@@ -19,6 +20,14 @@ import org.springframework.stereotype.Service;
 public class TestServiceImpl extends BaseServiceImpl<BasTest> implements TestService {
     private Logger log =Logger.getLogger(this.getClass());
     private LoggerUtil log2=LoggerUtil.getLogger(this.getClass());
+
+    @Value("${zx.url}")
+    private String zxUrl;
+    @Value("${zx.uid}")
+    private String zxUid;
+    @Value("${zx.key}")
+    private String zxKey;
+
     @Autowired
     BasTestMapper testMapper;
     @Override

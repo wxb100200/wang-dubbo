@@ -13,7 +13,7 @@
     <result column="sex" property="sex" jdbcType="INTEGER" />
     <result column="native_place" property="nativePlace" jdbcType="VARCHAR" />
     <result column="education" property="education" jdbcType="VARCHAR" />
-    <result column="marriage" property="marriage" jdbcType="BIT" />
+    <result column="marriage" property="marriage" jdbcType="VARCHAR" />
     <result column="address" property="address" jdbcType="VARCHAR" />
     <result column="type" property="type" jdbcType="INTEGER" />
   </resultMap>

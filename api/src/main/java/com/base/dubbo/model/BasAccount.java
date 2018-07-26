@@ -15,15 +15,10 @@ public class BasAccount {
     private Integer userId;
 
     /**
-     * 登陆系统的用户名
+     * 用户名
      */
     @Column(name = "user_name")
     private String userName;
-
-    /**
-     * 盐
-     */
-    private String salt;
 
     /**
      * 密码
@@ -31,26 +26,31 @@ public class BasAccount {
     private String password;
 
     /**
-     * 账号类型：1、普通账号，2、平台账号
+     * 盐
+     */
+    private String salt;
+
+    /**
+     * 账号类型
      */
     private Integer type;
 
     /**
-     * 账号状态：0、关闭，1、开启
+     * 账号状态：0、关闭，1、启用
      */
     private Integer status;
 
     /**
-     * 首次次登陆
+     * 最后登陆时间
      */
-    @Column(name = "first_login")
-    private Boolean firstLogin;
+    @Column(name = "last_login_time")
+    private Date lastLoginTime;
 
     /**
-     * 解锁时间：用户连续登陆失败次数过多，进行锁定
+     * 连续登陆失败次数
      */
-    @Column(name = "unlock_time")
-    private Date unlockTime;
+    @Column(name = "fail_num")
+    private String failNum;
 
     /**
      * @return id
@@ -85,39 +85,21 @@ public class BasAccount {
     }
 
     /**
-     * 获取登陆系统的用户名
+     * 获取用户名
      *
-     * @return user_name - 登陆系统的用户名
+     * @return user_name - 用户名
      */
     public String getUserName() {
         return userName;
     }
 
     /**
-     * 设置登陆系统的用户名
+     * 设置用户名
      *
-     * @param userName 登陆系统的用户名
+     * @param userName 用户名
      */
     public void setUserName(String userName) {
         this.userName = userName;
-    }
-
-    /**
-     * 获取盐
-     *
-     * @return salt - 盐
-     */
-    public String getSalt() {
-        return salt;
-    }
-
-    /**
-     * 设置盐
-     *
-     * @param salt 盐
-     */
-    public void setSalt(String salt) {
-        this.salt = salt;
     }
 
     /**
@@ -139,74 +121,92 @@ public class BasAccount {
     }
 
     /**
-     * 获取账号类型：1、普通账号，2、平台账号
+     * 获取盐
      *
-     * @return type - 账号类型：1、普通账号，2、平台账号
+     * @return salt - 盐
+     */
+    public String getSalt() {
+        return salt;
+    }
+
+    /**
+     * 设置盐
+     *
+     * @param salt 盐
+     */
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    /**
+     * 获取账号类型
+     *
+     * @return type - 账号类型
      */
     public Integer getType() {
         return type;
     }
 
     /**
-     * 设置账号类型：1、普通账号，2、平台账号
+     * 设置账号类型
      *
-     * @param type 账号类型：1、普通账号，2、平台账号
+     * @param type 账号类型
      */
     public void setType(Integer type) {
         this.type = type;
     }
 
     /**
-     * 获取账号状态：0、关闭，1、开启
+     * 获取账号状态：0、关闭，1、启用
      *
-     * @return status - 账号状态：0、关闭，1、开启
+     * @return status - 账号状态：0、关闭，1、启用
      */
     public Integer getStatus() {
         return status;
     }
 
     /**
-     * 设置账号状态：0、关闭，1、开启
+     * 设置账号状态：0、关闭，1、启用
      *
-     * @param status 账号状态：0、关闭，1、开启
+     * @param status 账号状态：0、关闭，1、启用
      */
     public void setStatus(Integer status) {
         this.status = status;
     }
 
     /**
-     * 获取首次次登陆
+     * 获取最后登陆时间
      *
-     * @return first_login - 首次次登陆
+     * @return last_login_time - 最后登陆时间
      */
-    public Boolean getFirstLogin() {
-        return firstLogin;
+    public Date getLastLoginTime() {
+        return lastLoginTime;
     }
 
     /**
-     * 设置首次次登陆
+     * 设置最后登陆时间
      *
-     * @param firstLogin 首次次登陆
+     * @param lastLoginTime 最后登陆时间
      */
-    public void setFirstLogin(Boolean firstLogin) {
-        this.firstLogin = firstLogin;
+    public void setLastLoginTime(Date lastLoginTime) {
+        this.lastLoginTime = lastLoginTime;
     }
 
     /**
-     * 获取解锁时间：用户连续登陆失败次数过多，进行锁定
+     * 获取连续登陆失败次数
      *
-     * @return unlock_time - 解锁时间：用户连续登陆失败次数过多，进行锁定
+     * @return fail_num - 连续登陆失败次数
      */
-    public Date getUnlockTime() {
-        return unlockTime;
+    public String getFailNum() {
+        return failNum;
     }
 
     /**
-     * 设置解锁时间：用户连续登陆失败次数过多，进行锁定
+     * 设置连续登陆失败次数
      *
-     * @param unlockTime 解锁时间：用户连续登陆失败次数过多，进行锁定
+     * @param failNum 连续登陆失败次数
      */
-    public void setUnlockTime(Date unlockTime) {
-        this.unlockTime = unlockTime;
+    public void setFailNum(String failNum) {
+        this.failNum = failNum;
     }
 }

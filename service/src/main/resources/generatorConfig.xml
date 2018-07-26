@@ -12,26 +12,30 @@
             <property name="caseSensitive" value="false"/>
         </plugin>
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/wang-ssm?characterEncoding=utf-8"
+                        connectionURL="jdbc:mysql://localhost:3306/wang-dubbo?characterEncoding=utf-8"
                         userId="root"
                         password="">
         </jdbcConnection>
 
         <javaModelGenerator targetPackage="com.base.dubbo.model"
-                                targetProject="D:\\project\\wang-dubbo\\api\\src\\main\\java"/>
+                                targetProject="D:\\myProject\\wang-dubbo\\api\\src\\main\\java"/>
 
         <sqlMapGenerator targetPackage="mapper"
-                         targetProject="D:\\project\\wang-dubbo\\service\\src\\main\\resources"/>
+                         targetProject="D:\\myProject\\wang-dubbo\\service\\src\\main\\resources"/>
 
         <javaClientGenerator targetPackage="com.base.dubbo.mapper"
-                             targetProject="D:\\project\\wang-dubbo\\service\\src\\main\\java" type="XMLMAPPER" />
+                             targetProject="D:\\myProject\\wang-dubbo\\service\\src\\main\\java" type="XMLMAPPER" />
 
         <!--<table tableName="bas_test" domainObjectName="BasTest"></table>-->
 
         <table tableName="bas_account" domainObjectName="BasAccount"></table>
+        <table tableName="bas_account_role" domainObjectName="BasAccountRole"></table>
         <table tableName="bas_config" domainObjectName="BasConfig"></table>
         <table tableName="bas_config_param" domainObjectName="BasConfigParam"></table>
-        <table tableName="bas_login" domainObjectName="BasLogin"></table>
+        <table tableName="bas_login_log" domainObjectName="BasLoginLog"></table>
+        <table tableName="bas_menu" domainObjectName="BasMenu"></table>
+        <table tableName="bas_role" domainObjectName="BasRole"></table>
+        <table tableName="bas_role_menu" domainObjectName="BasRoleMenu"></table>
         <table tableName="bas_user" domainObjectName="BasUser"></table>
 
 
