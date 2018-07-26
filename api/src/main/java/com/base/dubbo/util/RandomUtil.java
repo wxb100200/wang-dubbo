@@ -102,7 +102,7 @@ public class RandomUtil {
         if(length.length > 0){
             len = length[0];
         }
-        for (int i = 0; i <= len; i++) {
+        for (int i = 0; i < len; i++) {
             String rand = String.valueOf(codeSequence[random.nextInt(62)]);
             sRand += rand;
         }
@@ -118,7 +118,7 @@ public class RandomUtil {
         if(length.length > 0){
             len = length[0];
         }
-        for (int i = 0; i <= len; i++) {
+        for (int i = 0; i < len; i++) {
             String rand = String.valueOf(codeAllSequence[random.nextInt(63)]);
             sRand += rand;
         }
