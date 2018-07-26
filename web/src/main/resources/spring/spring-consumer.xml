@@ -12,5 +12,6 @@
     <dubbo:protocol name="dubbo" port="${dubbo.protocol}" dispatcher="all" threadpool="fixed" threads="20"/>  
      <!-- 要引用的服务 -->  
     <dubbo:reference interface="com.base.dubbo.service.TestService" id="testService" check="false"/>
+    <dubbo:reference interface="com.base.dubbo.service.BasUserService" id="userService" check="false"/>
 
 </beans>

@@ -19,6 +19,11 @@
     <!--
       WARNING - @mbggenerated
     -->
-    id, user_id, user_name, password, salt, type, status, last_login_time, fail_num
+    account.id, account.user_id as userId, account.user_name as userName, account.password, account.salt, account.type,
+    account.status,account.last_login_time as lastLoginTime, account.fail_num as failNum
   </sql>
+  <!--根据用户名查找账号记录-->
+  <select id="findByUserName" parameterType="java.lang.String" resultType="com.base.dubbo.model.BasAccount">
+    SELECT <include refid="Base_Column_List"/> from bas_account account WHERE account.user_name= #{userName}
+  </select>
 </mapper>
